@@ -107,7 +107,7 @@ const educationData = [
   {
     logo: schoolLogo4, // Path to school logo 4
     title: 'Faculty of Electrical Engineering and Computing',
-    subtitle: 'Oct 2019 - Jul 2025',
+    subtitle: 'Oct 2022 - Jul 2025',
     degree: 'Master of Science in Computing',
     description: 'Relevant courses: Machine Learning, Text Analysis and Retrieval, Multivariate Data Analysis, Introduction to Data Science, Statistical Data Analysis',
   },
@@ -121,7 +121,7 @@ const educationData = [
   {
     logo: schoolLogo2, // Path to school logo 2
     title: 'Faculty of Electrical Engineering and Computing',
-    subtitle: 'Sep 2015 - Jun 2019',
+    subtitle: 'Oct 2019 - Jun 2022',
     degree: 'Bachelor of Computing - Thesis Predicting stock prices using neural networks',
     description: 'Relevant courses: Introduction to Programming, Object Oriented Programming, Algorithms and Data Structures, Software Engineering, Databases, Software Engineering, Introduction to Artificial Intelligence, Computer Security, Linux',
   },
