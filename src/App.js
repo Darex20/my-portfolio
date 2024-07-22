@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, NavLink, Routes, Navigate } from 'react-router-dom';
+import { HashRouter as Router, Route, NavLink, Routes, Link } from 'react-router-dom';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import ThemeToggle from './components/ThemeToggle';
 import About from './components/About';
@@ -62,7 +62,7 @@ const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme.text};
     margin: 0 15px; /* Add some spacing between the nav links */
     text-decoration: none;
-    font-size: 1.5em; /* Increase the font size of the nav links */
+    font-size: 1.2em; /* Increase the font size of the nav links */
   }
 
   nav a.active {
@@ -107,7 +107,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <GlobalStyle />
-      <Router basename={process.env.PUBLIC_URL}>
+      <Router>
         <header className="header">
           <div className="header-content">
             <NavLink to="/about" className={({ isActive }) => isActive ? 'header-title active' : 'header-title'}>Dario <span style={{ color: '#6f42c1' }}>Pavlović</span></NavLink>
@@ -123,13 +123,12 @@ const App = () => {
         </header>
         <main>
           <Routes>
-            <Route path="/" element={<Navigate to="/about" />} />
+            <Route path="/" element={<About />} />
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/work-experience" element={<WorkExperience />} />
             <Route path="/skills" element={<Skills />} />  {/* New Skills route */}
             <Route path="/education" element={<Education />} />
-            <Route path="*" element={<Navigate to="/about" />} />
           </Routes>
         </main>
         <footer className="footer">
