@@ -22,6 +22,11 @@ const ItemContent = styled.div`
   width: 100%;
   max-width: 500px;
   font-family: monospace;
+  transition: transform 0.3s ease-in-out; /* Add transition for smooth effect */
+
+  &:hover {
+    transform: translateY(-10px); /* Move up by 10px on hover */
+  }
 `;
 
 const IconContainer = styled.div`
