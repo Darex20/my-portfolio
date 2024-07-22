@@ -113,7 +113,7 @@ const App = () => {
             <NavLink to="/about" className={({ isActive }) => isActive ? 'header-title active' : 'header-title'}>Dario <span style={{ color: '#6f42c1' }}>Pavlović</span></NavLink>
             <nav>
               <NavLink to="/about" activeClassName="active">About</NavLink>
-              <NavLink to="/projects" activeClassName="active">Projects</NavLink>
+              <NavLink to="/projects" activeClassName="active">Projects and Papers</NavLink>
               <NavLink to="/work-experience" activeClassName="active">Work Experience</NavLink>
               <NavLink to="/skills" activeClassName="active">Skills</NavLink> {/* New Skills button */}
               <NavLink to="/education" activeClassName="active">Education</NavLink>

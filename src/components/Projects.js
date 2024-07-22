@@ -222,7 +222,7 @@ const Projects = () => {
 
   return (
     <ProjectsSection>
-      <ProjectsTitle>Projects</ProjectsTitle>
+      <ProjectsTitle>Projects and Papers</ProjectsTitle>
       <ProjectsList>
         {projectData.map((project, index) => (
           project.type === 'audio' ? (
