@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { HashRouter as Router, Route, NavLink, Routes, Link } from 'react-router-dom';
+import { HashRouter as Router, Route, NavLink, Routes, Link, Navigate } from 'react-router-dom';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import ThemeToggle from './components/ThemeToggle';
 import About from './components/About';
