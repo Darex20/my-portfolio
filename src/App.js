@@ -123,7 +123,7 @@ const App = () => {
         </header>
         <main>
           <Routes>
-            <Route path="/" element={<About />} />
+            <Route path="/" element={<Navigate to="/about" />} />
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/work-experience" element={<WorkExperience />} />
