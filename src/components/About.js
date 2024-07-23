@@ -3,23 +3,23 @@ import styled from 'styled-components';
 import Tilt from 'react-parallax-tilt';
 import { FaGithub, FaLinkedin, FaFilePdf, FaEnvelope } from 'react-icons/fa';
 import ReactTypingEffect from 'react-typing-effect';
-import profileImage from '../assets/portrait.jpg'
-import cvPdf from '../assets/cv.pdf'
+import profileImage from '../assets/portrait.jpg';
+import cvPdf from '../assets/cv.pdf';
 
 const AboutSection = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px;  /* Increased padding */
+  padding: 50px;
   background-color: ${({ theme }) => theme.body};
   color: ${({ theme }) => theme.text};
-  min-height: 100vh; /* Increased min-height */
+  min-height: 100vh;
   flex-wrap: wrap;
 
   @media (max-width: 768px) {
     flex-direction: column;
-    padding: 30px;  /* Increased padding */
-    min-height: 90vh; /* Increased min-height */
+    padding: 30px;
+    min-height: 90vh;
   }
 `;
 
@@ -28,99 +28,125 @@ const ProfileContainer = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-right: 70px; /* Increased margin */
-  padding: 30px;  /* Increased padding */
+  margin-right: 70px;
+  padding: 30px;
 
   @media (max-width: 768px) {
     margin-right: 0;
-    margin-bottom: 40px; /* Increased margin */
+    margin-bottom: 20px; /* Reduced margin-bottom */
+    padding-bottom: 0; /* Removed bottom padding for mobile view */
   }
 `;
 
 const ProfileImage = styled.img`
-  width: 350px; /* Increased width */
-  height: 350px; /* Increased height */
+  width: 350px;
+  height: 350px;
   border-radius: 50%;
   object-fit: cover;
-  transition: transform 0.3s; /* Add transition for the lift effect */
+  transition: transform 0.3s;
 
   @media (max-width: 768px) {
-    width: 250px; /* Increased width */
-    height: 250px; /* Increased height */
+    width: 250px;
+    height: 250px;
   }
 `;
 
 const TiltContainer = styled(Tilt)`
-  width: 350px; /* Increased width */
-  height: 350px; /* Increased height */
-  margin-bottom: 30px; /* Increased margin */
-  transition: transform 0.3s; /* Add transition for the lift effect */
+  width: 350px;
+  height: 350px;
+  margin-bottom: 20px; /* Reduced margin-bottom */
+  transition: transform 0.3s;
 
   @media (max-width: 768px) {
-    width: 250px; /* Increased width */
-    height: 250px; /* Increased height */
+    width: 250px;
+    height: 250px;
   }
 `;
 
 const IconContainer = styled.div`
   display: flex;
-  gap: 30px; /* Increased gap */
+  gap: 30px;
   justify-content: center;
-  margin-bottom: 30px; /* Increased margin */
-  padding: 20px;  /* Increased padding */
+  margin-bottom: 10px; /* Reduced margin-bottom */
+  padding: 10px; /* Reduced padding */
 `;
 
 const IconLink = styled.a`
   color: ${({ theme }) => theme.iconColor};
-  font-size: 3.5em; /* Increased font size */
-  transition: color 0.3s, transform 0.3s; /* Add transition for the lift effect */
+  font-size: 3.5em;
+  transition: color 0.3s, transform 0.3s;
 
   &:hover {
     color: #6f42c1;
-    transform: translateY(-1mm); /* Lift up the icon */
+    transform: translateY(-1mm);
   }
 `;
 
 const ProfileInfo = styled.div`
-  max-width: 700px; /* Increased max-width */
-  text-align: left; /* Left aligned text */
-  padding: 30px;  /* Increased padding */
+  max-width: 700px;
+  text-align: left;
+  padding: 30px;
+
+  @media (max-width: 768px) {
+    padding: 0;
+  }
 
   h1 {
-    font-size: 3.5em; /* Increased font size */
-    margin-bottom: 30px; /* Increased margin */
+    font-size: 3.5em;
+    margin-bottom: 20px; /* Reduced margin-bottom */
+
+    @media (max-width: 768px) {
+      font-size: 2em;
+    }
   }
 
   p {
-    font-size: 1.5em; /* Increased font size */
-    margin-bottom: 30px; /* Increased margin */
+    font-size: 1.5em;
+    margin-bottom: 20px; /* Reduced margin-bottom */
+
+    @media (max-width: 768px) {
+      font-size: 1.2em;
+    }
   }
 
   .dynamic-text {
-    font-size: 1.8em; /* Increased font size */
-    margin-bottom: 30px; /* Increased margin */
+    font-size: 1.8em;
+    margin-bottom: 20px; /* Reduced margin-bottom */
+
+    @media (max-width: 768px) {
+      font-size: 1.5em;
+    }
   }
 
   .static-text {
-    color: ${({ theme }) => theme.text}; /* Normal color for static text */
-    display: inline; /* Ensure the static text remains inline */
+    color: ${({ theme }) => theme.text};
+    display: inline;
   }
 
   .typing-text {
-    color: #6f42c1; /* Color for typing text */
-    display: inline; /* Ensure the typing text remains inline */
+    color: #6f42c1;
+    display: inline;
   }
 
   .buttons {
     display: flex;
-    gap: 20px; /* Added gap between buttons */
+    gap: 20px;
     justify-content: center;
-    margin-top: 30px; /* Increased margin */
+    margin-top: 20px; /* Reduced margin-top */
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 10px;
+    }
   }
 
   a {
     text-decoration: none;
-    display: inline-block; /* Ensure anchor element takes up only necessary space */
+    display: inline-block;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   }
 
   button {
@@ -129,20 +155,27 @@ const ProfileInfo = styled.div`
     background-color: #6f42c1;
     color: white;
     border: none;
-    padding: 20px 40px; /* Increased padding */
-    border-radius: 10px; /* Increased border radius */
+    padding: 20px 40px;
+    border-radius: 10px;
     cursor: pointer;
-    font-size: 1.5em; /* Increased font size */
-    transition: background-color 0.3s; /* Add transition for the hover effect */
-    text-decoration: none; /* Remove underline */
+    font-size: 1.5em;
+    transition: background-color 0.3s;
+    text-decoration: none;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      justify-content: center;
+      padding: 15px 30px;
+      font-size: 1.2em;
+    }
   }
 
   button:hover {
-    background-color: #583c9b; /* Darker purple for hover effect */
+    background-color: #583c9b;
   }
 
   svg {
-    margin-right: 15px; /* Increased space between icon and text */
+    margin-right: 15px;
   }
 `;
 
@@ -151,7 +184,7 @@ const About = () => {
     <AboutSection>
       <ProfileContainer>
         <TiltContainer>
-          <ProfileImage src={profileImage} alt="Profile"/>
+          <ProfileImage src={profileImage} alt="Profile" />
         </TiltContainer>
         <IconContainer>
           <IconLink href="https://github.com/Darex20" target="_blank">
@@ -166,7 +199,7 @@ const About = () => {
         </IconContainer>
       </ProfileContainer>
       <ProfileInfo>
-      <h1>Hello, I'm Dario 👋</h1>
+        <h1>Hello, I'm Dario 👋</h1>
         <p className="dynamic-text">
           <span className="static-text">I am into </span>
           <span className="typing-text">

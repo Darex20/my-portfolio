@@ -18,6 +18,13 @@ const TimelineContainer = styled.div`
     left: 50%;
     margin-left: -4px; /* Adjusted for the new line width */
   }
+
+  @media (max-width: 768px) {
+    &:before {
+      left: 50%;
+      margin-left: -4px;
+    }
+  }
 `;
 
 const experienceData = [

@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FaReact, FaNodeJs, FaSass, FaHtml5, FaCss3Alt, FaJsSquare, FaJava, FaPython, FaGitAlt, FaGithub, FaLinux, FaAws } from 'react-icons/fa';
-import { SiExpress, SiBootstrap, SiSpring, SiC, SiCplusplus, SiMongodb, SiMysql, SiPostgresql, SiHeroku, SiNetlify, SiUnity, SiJquery, SiWordpress, SiGoland, SiBlender, SiPytorch, SiTensorflow, SiKeras, SiScikitlearn, SiR, SiApachekafka, SiKubernetes, SiDocker, SiMicrosoftazure, SiGooglecloud, SiApachespark, SiFlask } from 'react-icons/si';
-import mixerGif from '../assets/mixer-800x600.gif'
+import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJsSquare, FaJava, FaPython, FaGitAlt, FaGithub, FaLinux, FaAws } from 'react-icons/fa';
+import { SiExpress, SiSpring, SiC, SiCplusplus, SiMongodb, SiMysql, SiPostgresql, SiHeroku, SiNetlify, SiUnity, SiWordpress, SiGoland, SiBlender, SiPytorch, SiTensorflow, SiKeras, SiScikitlearn, SiR, SiApachekafka, SiKubernetes, SiDocker, SiMicrosoftazure, SiGooglecloud, SiApachespark, SiFlask } from 'react-icons/si';
+import mixerGif from '../assets/mixer-800x600.gif';
 
 const SkillsSection = styled.section`
   display: flex;
@@ -30,6 +30,7 @@ const SkillsList = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
+  width: 100%;
 `;
 
 const SkillCard = styled.div`
@@ -50,16 +51,31 @@ const SkillCard = styled.div`
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
+
+  @media (max-width: 768px) {
+    width: calc(33.33% - 20px);
+    height: auto;
+    padding: 10px;
+  }
 `;
 
 const SkillIcon = styled.div`
   font-size: 4em;
   margin-bottom: 10px;
+
+  @media (max-width: 768px) {
+    font-size: 2em;
+    margin-bottom: 5px;
+  }
 `;
 
 const SkillName = styled.div`
   font-size: 1.2em;
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 0.8em;
+  }
 `;
 
 const MixerContainer = styled.div`
@@ -67,6 +83,10 @@ const MixerContainer = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
+
+  @media (max-width: 768px) {
+    margin-top: 30px;
+  }
 `;
 
 const MixerImage = styled.img`
@@ -74,6 +94,10 @@ const MixerImage = styled.img`
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  @media (max-width: 768px) {
+    max-width: 90%;
+  }
 `;
 
 const MixerTitle = styled.h2`
@@ -81,6 +105,11 @@ const MixerTitle = styled.h2`
   margin-top: 20px;
   color: ${({ theme }) => theme.text};
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 1.5em;
+    margin-top: 10px;
+  }
 `;
 
 const skillsData = [

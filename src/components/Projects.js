@@ -15,9 +15,10 @@ const ProjectsSection = styled.section`
   background-color: ${({ theme }) => theme.body};
   color: ${({ theme }) => theme.text};
   min-height: 100vh;
+  overflow-x: hidden;
 
   @media (max-width: 768px) {
-    padding: 30px;
+    padding: 30px 15px; /* Adjusted padding for mobile */
   }
 `;
 
@@ -32,7 +33,7 @@ const ProjectsList = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 70%;  /* Adjusted width to bring cards closer to the center */
+  width: 100%;  /* Adjusted width */
   align-items: center; /* Center the items horizontally */
 `;
 
@@ -44,10 +45,12 @@ const Card = styled.div`
   padding: 10px;
   transition: transform 0.3s, box-shadow 0.3s;
   width: 100%;  /* Ensure cards fill the width of the container */
-  max-width: 700px;  /* Increased max-width of the cards */
-  align-self: ${props => props.position};
+  max-width: 700px;
   cursor: pointer; /* Make the card appear clickable */
   position: relative; /* For the ribbon positioning */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   &:hover {
     transform: translateY(-5px);
@@ -60,17 +63,17 @@ const Card = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 80%;
-    align-self: center;
+    padding: 20px; /* Increased padding for mobile */
   }
 `;
 
 const ProjectImageContainer = styled.div`
-  width: 60%;  /* Increased the container size */
+  width: 100%;
   height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow-x: hidden;
 `;
 
 const ProjectImage = styled.img`
@@ -82,7 +85,7 @@ const ProjectImage = styled.img`
 const CardContent = styled.div`
   margin-top: 15px;
   display: flex;
-  flex-direction: ${props => props.position === 'flex-start' ? 'row' : 'row-reverse'};
+  flex-direction: column;
   align-items: center;
   gap: 20px;
 `;
@@ -90,7 +93,12 @@ const CardContent = styled.div`
 const CardText = styled.div`
   display: flex;
   flex-direction: column;
-  width: 40%;  /* Adjusted width to complement the increased image container */
+  width: 80%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    text-align: center;
+  }
 `;
 
 const CardTitle = styled.h3`

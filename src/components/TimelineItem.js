@@ -11,11 +11,18 @@ const ItemContainer = styled.div`
   justify-content: ${props => (props.position === 'left' ? 'flex-end' : 'flex-start')};
   align-items: center;
   ${props => props.position === 'right' ? 'margin-left: 50%;' : 'margin-right: 50%;'}
+
+  @media (max-width: 768px) {
+    width: 100%;
+    justify-content: center;
+    margin: 0;
+    padding: 10px 0;
+  }
 `;
 
 const ItemContent = styled.div`
   background: ${props => props.theme.body === '#1c1c1c' ? '#FFF' : '#000'};
-  padding: 20px 30px;
+  padding: 30px 40px;
   border-radius: 10px;
   color: ${props => props.theme.body === '#1c1c1c' ? '#000' : '#FFF'};
   position: relative;
@@ -26,6 +33,12 @@ const ItemContent = styled.div`
 
   &:hover {
     transform: translateY(-10px); /* Move up by 10px on hover */
+  }
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    padding: 40px 50px; /* Increased padding for larger cards */
+    text-align: center;
   }
 `;
 
@@ -43,30 +56,50 @@ const IconContainer = styled.div`
   align-items: center;
   justify-content: center;
   z-index: 2;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const Title = styled.h3`
   margin: 0;
   color: ${props => props.theme.body === '#1c1c1c' ? '#444' : '#FFF'};
   font-size: 1.5em;
+
+  @media (max-width: 768px) {
+    font-size: 1.8em; /* Increased font size for mobile */
+  }
 `;
 
 const Subtitle = styled.h4`
   margin: 0;
   color: ${props => props.theme.body === '#1c1c1c' ? '#444' : '#FFF'};
   font-size: 1.2em;
+
+  @media (max-width: 768px) {
+    font-size: 1.5em; /* Increased font size for mobile */
+  }
 `;
 
 const Date = styled.p`
   margin: 10px 0;
   color: ${props => props.theme.body === '#1c1c1c' ? '#444' : '#FFF'};
   font-size: 1em;
+
+  @media (max-width: 768px) {
+    font-size: 1.2em; /* Increased font size for mobile */
+  }
 `;
 
 const Description = styled.p`
   margin: 0;
   color: ${props => props.theme.body === '#1c1c1c' ? '#444' : '#FFF'};
   font-size: 1em;
+
+  @media (max-width: 768px) {
+    font-size: 1.2em; /* Increased font size for mobile */
+  }
 `;
 
 const TimelineItem = ({ position, title, subtitle, date, description }) => {
