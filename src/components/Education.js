@@ -51,6 +51,7 @@ const Card = styled.div`
   @media (max-width: 768px) {
     flex-direction: column;
     text-align: center;
+    align-items: center; /* Center align items */
   }
 `;
 
@@ -65,6 +66,7 @@ const LogoContainer = styled.div`
   border-radius: 10px;  /* Square shape with rounded corners */
   @media (max-width: 768px) {
     margin-bottom: 20px;
+    margin-right: 0; /* Remove right margin */
   }
 `;
 
