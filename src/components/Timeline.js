@@ -30,7 +30,7 @@ const TimelineContainer = styled.div`
 const experienceData = [
   {
     title: 'Syntio',
-    subtitle: 'Associate Data Engineer | Part',
+    subtitle: 'Associate Data Engineer | Part Time',
     date: 'Sep 2022 - Jun 2023',
     description: 'Cloud data engineering (Google Cloud Platform, Azure, AWS, Kafka, Spark, Golang)',
     position: 'right'
