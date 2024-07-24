@@ -212,7 +212,7 @@ const App = () => {
             </NavLink>
             <nav className="nav-links">
               <NavLink to="/about" activeClassName="active">About</NavLink>
-              <NavLink to="/projects" activeClassName="active">Projects</NavLink>
+              <NavLink to="/projects" activeClassName="active">Projects and Papers</NavLink>
               <NavLink to="/work-experience" activeClassName="active">Work Experience</NavLink>
               <NavLink to="/skills" activeClassName="active">Skills</NavLink>
               <NavLink to="/education" activeClassName="active">Education</NavLink>
