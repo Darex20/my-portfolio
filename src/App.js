@@ -225,7 +225,7 @@ const App = () => {
             &times;
           </div>
           <NavLink to="/about" activeClassName="active" onClick={toggleSidebar}>About</NavLink>
-          <NavLink to="/projects" activeClassName="active" onClick={toggleSidebar}>Projects</NavLink>
+          <NavLink to="/projects" activeClassName="active" onClick={toggleSidebar}>Projects and Papers</NavLink>
           <NavLink to="/work-experience" activeClassName="active" onClick={toggleSidebar}>Work Experience</NavLink>
           <NavLink to="/skills" activeClassName="active" onClick={toggleSidebar}>Skills</NavLink>
           <NavLink to="/education" activeClassName="active" onClick={toggleSidebar}>Education</NavLink>
