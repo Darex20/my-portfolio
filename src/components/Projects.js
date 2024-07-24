@@ -247,7 +247,7 @@ const Projects = () => {
                   <CardDate>{project.date}</CardDate>
                   <CardDescription>{project.description}</CardDescription>
                   {project.audio && (
-                    <ProjectAudio controls>
+                    <ProjectAudio controls onClick={(e) => e.stopPropagation()}>
                       <source src={project.audio} type="audio/mpeg" />
                       Your browser does not support the audio element.
                     </ProjectAudio>
