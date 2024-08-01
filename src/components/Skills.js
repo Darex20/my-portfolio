@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJsSquare, FaJava, FaPython, FaGitAlt, FaGithub, FaLinux, FaAws } from 'react-icons/fa';
-import { SiExpress, SiSpring, SiC, SiCplusplus, SiMongodb, SiMysql, SiPostgresql, SiHeroku, SiNetlify, SiUnity, SiWordpress, SiGoland, SiBlender, SiPytorch, SiTensorflow, SiKeras, SiScikitlearn, SiR, SiApachekafka, SiKubernetes, SiDocker, SiMicrosoftazure, SiGooglecloud, SiApachespark, SiFlask } from 'react-icons/si';
+import { SiVercel, SiExpress, SiSpring, SiC, SiCplusplus, SiMongodb, SiMysql, SiPostgresql, SiHeroku, SiNetlify, SiUnity, SiWordpress, SiGoland, SiBlender, SiPytorch, SiTensorflow, SiKeras, SiScikitlearn, SiR, SiApachekafka, SiKubernetes, SiDocker, SiMicrosoftazure, SiGooglecloud, SiApachespark, SiFlask } from 'react-icons/si';
 import mixerGif from '../assets/mixer-800x600.gif';
 
 const SkillsSection = styled.section`
@@ -124,6 +124,7 @@ const skillsData = [
   { name: 'Docker', icon: <SiDocker /> },
   { name: 'Azure', icon: <SiMicrosoftazure /> },
   { name: 'GCP', icon: <SiGooglecloud /> },
+  { name: 'AWS', icon: <FaAws /> },
   { name: 'Spark', icon: <SiApachespark /> },
   { name: 'Flask', icon: <SiFlask /> },
   { name: 'Java', icon: <FaJava /> },
@@ -140,13 +141,13 @@ const skillsData = [
   { name: 'NodeJS', icon: <FaNodeJs /> },
   { name: 'C', icon: <SiC /> },
   { name: 'C++', icon: <SiCplusplus /> },
-  { name: 'AWS', icon: <FaAws /> },
   { name: 'Heroku', icon: <SiHeroku /> },
   { name: 'Netlify', icon: <SiNetlify /> },
+  { name: 'Vercel', icon: <SiVercel /> },
   { name: 'WordPress', icon: <SiWordpress /> },
   { name: 'Golang', icon: <SiGoland /> },
-  { name: 'Blender', icon: <SiBlender /> },
   { name: 'Linux', icon: <FaLinux /> },
+  { name: 'Blender', icon: <SiBlender /> },
   { name: 'Unity', icon: <SiUnity /> },
 ];
 

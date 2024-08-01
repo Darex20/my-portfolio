@@ -102,18 +102,18 @@ const CardText = styled.div`
 `;
 
 const CardTitle = styled.h3`
-  font-size: 1.2em;
+  font-size: 2em;
   margin: 0;
   color: inherit;
 `;
 
 const CardDate = styled.p`
-  font-size: 0.8em;
+  font-size: 1.1em;
   color: ${props => props.theme.body === '#1c1c1c' ? '#000' : '#FFF'};
 `;
 
 const CardDescription = styled.p`
-  font-size: 0.9em;
+  font-size: 1.2em;
   color: inherit;
 `;
 

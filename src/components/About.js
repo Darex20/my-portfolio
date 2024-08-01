@@ -4,7 +4,7 @@ import Tilt from 'react-parallax-tilt';
 import { FaGithub, FaLinkedin, FaFilePdf, FaEnvelope } from 'react-icons/fa';
 import ReactTypingEffect from 'react-typing-effect';
 import profileImage from '../assets/portrait.jpg';
-import cvPdf from '../assets/cv.pdf';
+import cvPdf from '../assets/CV-DarioPavlovic.pdf';
 
 const AboutSection = styled.section`
   display: flex;
@@ -214,10 +214,10 @@ const About = () => {
           </span>
         </p>
         <div className="buttons">
-          <a href={cvPdf} download="CV_Dario_Pavlovic">
+          <a href={cvPdf} target = "_blank">
             <button>
               <FaFilePdf />
-              Download CV
+              Check out my resume!
             </button>
           </a>
           <a href="mailto:pava.dario@gmail.com">

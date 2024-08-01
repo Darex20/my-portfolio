@@ -8,7 +8,7 @@ const Section = styled.div`
 `;
 
 const SectionTitle = styled.h2`
-  font-size: 2.5em;  /* Ensure consistent size */
+  font-size: 2em;  /* Ensure consistent size */
   margin-bottom: 40px;
   color: ${({ theme }) => theme.text};
   font-family: monospace;

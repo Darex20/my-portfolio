@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: monospace;
     background-color: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
     display: flex;
@@ -50,7 +50,7 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     position: relative;
 
-    @media (max-width: 768px) {
+    @media (max-width: 1350px) {
       font-size: 1.5em; /* Make the header title smaller on mobile */
     }
   }
@@ -77,7 +77,7 @@ const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme.text};
     margin: 0 15px; /* Add some spacing between the nav links */
     text-decoration: none;
-    font-size: 1.2em; /* Increase the font size of the nav links */
+    font-size: 1.5em; /* Increase the font size of the nav links */
   }
 
   .nav-links a.active {
@@ -88,9 +88,14 @@ const GlobalStyle = createGlobalStyle`
     display: none;
     font-size: 2em;
     cursor: pointer;
+    transition: transform 0.3s ease;
   }
 
-  @media (max-width: 768px) {
+  .nav-toggle:hover {
+    transform: rotate(90deg);
+  }
+
+  @media (max-width: 1350px) {
     .nav-toggle {
       display: block;
     }
@@ -122,6 +127,7 @@ const SidebarStyles = createGlobalStyle`
 
   .sidebar.open {
     transform: translateX(0);
+    transition: transform 0.3s ease-in-out;
   }
 
   .sidebar a {
@@ -131,6 +137,12 @@ const SidebarStyles = createGlobalStyle`
     font-size: 1.5em;
     width: 100%;
     text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .sidebar a:hover {
+    background-color: ${({ theme }) => theme.activeLink};
+    color: white;
   }
 
   .sidebar a.active {
@@ -143,6 +155,21 @@ const SidebarStyles = createGlobalStyle`
     right: 20px;
     font-size: 2em;
     cursor: pointer;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: rotate(-90deg);
+    }
+  }
+
+  @media (max-width: 1350px) {
+    .sidebar a {
+      font-size: 1.2em;
+    }
+
+    .sidebar {
+      width: 200px;
+    }
   }
 `;
 

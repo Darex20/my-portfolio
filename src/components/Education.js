@@ -84,24 +84,24 @@ const CardContent = styled.div`
 
 const CardTitle = styled.h2`
   margin: 0;
-  font-size: 1.5em;
+  font-size: 1.9em;
   color: inherit;
 `;
 
 const CardSubtitle = styled.h3`
   margin: 5px 0;
-  font-size: 1.2em;
+  font-size: 1.1em;
   color: inherit;
 `;
 
 const CardDegree = styled.h4`
   margin: 5px 0;
-  font-size: 1em;
+  font-size: 1.3em;
   color: inherit;
 `;
 
 const CardDescription = styled.p`
-  font-size: 1em;
+  font-size: 1.2em;
   color: inherit;
 `;
 
@@ -111,7 +111,7 @@ const educationData = [
     title: 'Faculty of Electrical Engineering and Computing',
     subtitle: 'Oct 2022 - Jul 2025',
     degree: 'Master of Science in Computing',
-    description: 'Relevant courses: Machine Learning, Text Analysis and Retrieval, Multivariate Data Analysis, Introduction to Data Science, Statistical Data Analysis',
+    description: 'Relevant courses: Introduction to Data Science, Machine Learning, Neural Networks, Text Analysis and Retrieval, Statistical Data Analysis, Multivariate Data Analysis, Data Visualization, Advanced Algorithms and Data Structures',
   },
   {
     logo: schoolLogo3, // Path to school logo 3
@@ -125,14 +125,14 @@ const educationData = [
     title: 'Faculty of Electrical Engineering and Computing',
     subtitle: 'Oct 2019 - Jun 2022',
     degree: 'Bachelor of Computing - Thesis Predicting stock prices using neural networks',
-    description: 'Relevant courses: Introduction to Programming, Object Oriented Programming, Algorithms and Data Structures, Software Engineering, Databases, Software Engineering, Introduction to Artificial Intelligence, Computer Security, Linux',
+    description: 'Relevant courses: Introduction to Programming, Object Oriented Programming, Algorithms and Data Structures, Software Engineering, Databases, Introduction to Artificial Intelligence, Computer Security, Linux',
   },
   {
     logo: schoolLogo1, // Path to school logo 1
     title: 'Gimnazija Sesvete',
     subtitle: 'Sep 2015 - Jun 2019',
     degree: 'High school degree',
-    description: '',
+    description: 'Took a Java Academy course. Worked on an Arduino noise pollution project.',
   },
 ];
 
