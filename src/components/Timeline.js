@@ -29,6 +29,13 @@ const TimelineContainer = styled.div`
 
 const experienceData = [
   {
+    title: 'Raiffeisenbank Croatia',
+    subtitle: 'Data Scientist | Full Time',
+    date: 'Oct 2024 - now',
+    description: 'Gen AI, Chatbot team',
+    position: 'left'
+  },
+  {
     title: 'Syntio',
     subtitle: 'Associate Data Engineer | Part Time',
     date: 'Sep 2022 - Jun 2023',
