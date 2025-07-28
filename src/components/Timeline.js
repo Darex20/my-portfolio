@@ -29,32 +29,39 @@ const TimelineContainer = styled.div`
 
 const experienceData = [
   {
-    title: 'Raiffeisenbank Croatia',
-    subtitle: 'Data Scientist | Full Time',
-    date: 'Oct 2024 - now',
-    description: 'Gen AI, Chatbot team',
+    title: 'all eyes on screens',
+    subtitle: 'Data Scientist',
+    date: 'Sep 2025 - now',
+    description: 'TV Advertisement analysis',
     position: 'left'
   },
   {
+    title: 'Raiffeisenbank Croatia',
+    subtitle: 'Data Analyst',
+    date: 'Oct 2024 - now',
+    description: 'Gen AI, Chatbot team',
+    position: 'right'
+  },
+  {
     title: 'Syntio',
-    subtitle: 'Associate Data Engineer | Part Time',
+    subtitle: 'Associate Data Engineer',
     date: 'Sep 2022 - Jun 2023',
     description: 'Cloud data engineering (Google Cloud Platform, Azure, AWS, Kafka, Spark, Golang)',
-    position: 'right'
+    position: 'left'
   },
   {
     title: 'KING ICT',
     subtitle: 'Web Developer | Internship',
     date: 'Jul 2021 - Aug 2021',
     description: 'Developed a Python Flask Web Application',
-    position: 'left'
+    position: 'right'
   },
   {
     title: 'nDimension',
     subtitle: 'Maintenance and repairement of computers | Internship',
     date: 'Jun 2016 - Aug 2016',
     description: 'Maintenance and repairement of computers',
-    position: 'right'
+    position: 'left'
   },
 ];
 
