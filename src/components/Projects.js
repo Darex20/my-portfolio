@@ -177,7 +177,7 @@ const projectData = [
     title: 'Deep Learning-Based Music Stem Separation and Instrument Isolation',
     description: 'Comparison of deep learning models for music stem separation, including experiments with extended instrument categories and discussion of dataset and model challenges.',
     date: 'September 2025',
-    link: '',
+    link: 'https://github.com/Darex20/music_stemmer',
     image: source_separation_training,  // Replace with actual image path
     position: 'flex-end',
   },
