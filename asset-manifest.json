@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/my-portfolio/static/css/main.ee10211b.chunk.css",
-    "main.js": "/my-portfolio/static/js/main.341e4f05.chunk.js",
-    "main.js.map": "/my-portfolio/static/js/main.341e4f05.chunk.js.map",
+    "main.js": "/my-portfolio/static/js/main.75ea6c15.chunk.js",
+    "main.js.map": "/my-portfolio/static/js/main.75ea6c15.chunk.js.map",
     "runtime-main.js": "/my-portfolio/static/js/runtime-main.eac86b9c.js",
     "runtime-main.js.map": "/my-portfolio/static/js/runtime-main.eac86b9c.js.map",
     "static/js/2.b461552f.chunk.js": "/my-portfolio/static/js/2.b461552f.chunk.js",
@@ -10,7 +10,7 @@
     "index.html": "/my-portfolio/index.html",
     "static/css/main.ee10211b.chunk.css.map": "/my-portfolio/static/css/main.ee10211b.chunk.css.map",
     "static/js/2.b461552f.chunk.js.LICENSE.txt": "/my-portfolio/static/js/2.b461552f.chunk.js.LICENSE.txt",
-    "static/media/CV-DarioPavlovic.1684fbcc.pdf": "/my-portfolio/static/media/CV-DarioPavlovic.1684fbcc.pdf",
+    "static/media/CV-DarioPavlovic.027db337.pdf": "/my-portfolio/static/media/CV-DarioPavlovic.027db337.pdf",
     "static/media/example.0ced9f8e.mp3": "/my-portfolio/static/media/example.0ced9f8e.mp3",
     "static/media/mixer-800x600.f2ec1695.gif": "/my-portfolio/static/media/mixer-800x600.f2ec1695.gif",
     "static/media/portrait.d89fb4b5.jpg": "/my-portfolio/static/media/portrait.d89fb4b5.jpg",
@@ -25,6 +25,6 @@
     "static/js/runtime-main.eac86b9c.js",
     "static/js/2.b461552f.chunk.js",
     "static/css/main.ee10211b.chunk.css",
-    "static/js/main.341e4f05.chunk.js"
+    "static/js/main.75ea6c15.chunk.js"
   ]
 }
