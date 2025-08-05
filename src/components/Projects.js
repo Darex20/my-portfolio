@@ -175,7 +175,7 @@ const projectData = [
   {
     type: 'paper',
     title: 'Deep Learning-Based Music Stem Separation and Instrument Isolation',
-    description: 'Abstract: This thesis investigates deep learning-based approaches for music stem separation and instrument isolation, focusing on moving beyond the conventional four-stem (vocals, drums, bass, other) paradigm. After reviewing the evolution from traditional signal processing to modern neural architectures, three state-of-the-art models Demucs, Open-Unmix, and Spleeter are systematically compared in terms of architecture, training, and performance on standard benchmarks. To address the limitations of existing datasets and models, a progressive experimental methodology was adopted: starting with custom synthetic drum and flute mixtures, advancing to guitar separation on the Slakh2100 dataset, and finally evaluating real-world generalization using MoisesDB. Data preparation pipelines, model configurations, and training strategies are detailed for each phase. The results highlight both the potential and challenges of extending separation to more granular instrument categories, emphasizing the need for hierarchical approaches and diverse datasets. This work provides insights and practical guidelines for advancing music source separation research and applications.',
+    description: 'Comparison of deep learning models for music stem separation, including experiments with extended instrument categories and discussion of dataset and model challenges.',
     date: 'September 2025',
     link: '',
     image: source_separation_training,  // Replace with actual image path
