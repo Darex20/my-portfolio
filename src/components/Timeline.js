@@ -38,7 +38,7 @@ const experienceData = [
   {
     title: 'Raiffeisenbank Croatia',
     subtitle: 'Data Analyst',
-    date: 'Oct 2024 - now',
+    date: 'Oct 2024 - July 2025',
     description: 'Gen AI, Chatbot team',
     position: 'right'
   },
