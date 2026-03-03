@@ -379,7 +379,7 @@ object-assign
     width: 100%;
     justify-content: flex-start;
     margin: 0;
-    padding: 10px 10px 10px 68px;
+    padding: 10px 12px 10px 58px;
   }
 `,Ih=D.div`
   background: ${e=>e.featured?e.theme.body==="#1c1c1c"?"#2e1f54":"#ede8fb":e.theme.body==="#1c1c1c"?"#FFF":"#000"};
@@ -428,7 +428,7 @@ object-assign
   @media (max-width: 768px) {
     width: 34px;
     height: 34px;
-    left: -50px;
+    left: 3px;
     right: auto;
     font-size: 0.9em;
   }
@@ -487,7 +487,7 @@ object-assign
 
   @media (max-width: 768px) {
     &:before {
-      left: 24px;
+      left: 20px;
       transform: none;
     }
   }
