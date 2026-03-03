@@ -16,7 +16,7 @@ const ItemContainer = styled.div`
     width: 100%;
     justify-content: flex-start;
     margin: 0;
-    padding: 10px 10px 10px 68px;
+    padding: 10px 12px 10px 58px;
   }
 `;
 
@@ -74,7 +74,7 @@ const IconContainer = styled.div`
   @media (max-width: 768px) {
     width: 34px;
     height: 34px;
-    left: -50px;
+    left: 3px;
     right: auto;
     font-size: 0.9em;
   }

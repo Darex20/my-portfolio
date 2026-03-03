@@ -29,7 +29,7 @@ const TimelineContainer = styled.div`
 
   @media (max-width: 768px) {
     &:before {
-      left: 24px;
+      left: 20px;
       transform: none;
     }
   }
