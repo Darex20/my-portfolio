@@ -11,18 +11,26 @@ const TimelineContainer = styled.div`
   &:before {
     content: '';
     position: absolute;
-    width: 8px; /* Increased line width */
-    background-color: #6a0dad; /* Purple color for the line */
+    width: 3px;
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      #6f42c1 8%,
+      #6f42c1 92%,
+      transparent
+    );
+    box-shadow: 0 0 10px rgba(111, 66, 193, 0.45);
     top: 0;
     bottom: 0;
     left: 50%;
-    margin-left: -4px; /* Adjusted for the new line width */
+    transform: translateX(-50%);
+    border-radius: 2px;
   }
 
   @media (max-width: 768px) {
     &:before {
-      left: 50%;
-      margin-left: -4px;
+      left: 24px;
+      transform: none;
     }
   }
 `;

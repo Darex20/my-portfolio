@@ -1,5 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const fadeUp = keyframes`
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+`;
 import audioExample from '../assets/example.mp3';
 import waveImage from '../assets/music_wave.jpg';
 import powerbiImage from '../assets/powerBI_visualization.png';
@@ -17,6 +22,7 @@ const ProjectsSection = styled.section`
   color: ${({ theme }) => theme.text};
   min-height: 100vh;
   overflow-x: hidden;
+  animation: ${fadeUp} 0.5s ease both;
 
   @media (max-width: 768px) {
     padding: 30px 15px; /* Adjusted padding for mobile */

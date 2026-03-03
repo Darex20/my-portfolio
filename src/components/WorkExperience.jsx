@@ -1,10 +1,16 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const fadeUp = keyframes`
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+`;
 import Timeline from './Timeline';
 
 const Section = styled.div`
   padding: 40px;
   text-align: center;
+  animation: ${fadeUp} 0.5s ease both;
 `;
 
 const SectionTitle = styled.h2`

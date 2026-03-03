@@ -1,5 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const fadeUp = keyframes`
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+`;
 import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJsSquare, FaJava, FaPython, FaGitAlt, FaGithub, FaLinux, FaAws } from 'react-icons/fa';
 import { SiVercel, SiExpress, SiSpring, SiC, SiCplusplus, SiMongodb, SiMysql, SiPostgresql, SiHeroku, SiNetlify, SiUnity, SiWordpress, SiGoland, SiBlender, SiPytorch, SiTensorflow, SiKeras, SiScikitlearn, SiR, SiApachekafka, SiKubernetes, SiDocker, SiGooglecloud, SiApachespark, SiFlask } from 'react-icons/si';
 import { VscAzure } from 'react-icons/vsc';
@@ -13,6 +18,7 @@ const SkillsSection = styled.section`
   background-color: ${({ theme }) => theme.body};
   color: ${({ theme }) => theme.text};
   min-height: 100vh;
+  animation: ${fadeUp} 0.5s ease both;
 
   @media (max-width: 768px) {
     padding: 30px;

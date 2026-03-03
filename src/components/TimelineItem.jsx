@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import styled, { ThemeContext } from 'styled-components';
-import { FaBriefcase } from 'react-icons/fa';
+import { LuBriefcase } from 'react-icons/lu';
 
 const ItemContainer = styled.div`
   position: relative;
@@ -14,9 +14,9 @@ const ItemContainer = styled.div`
 
   @media (max-width: 768px) {
     width: 100%;
-    justify-content: center;
+    justify-content: flex-start;
     margin: 0;
-    padding: 10px 0;
+    padding: 10px 10px 10px 68px;
   }
 `;
 
@@ -42,8 +42,7 @@ const ItemContent = styled.div`
 
   @media (max-width: 768px) {
     max-width: 100%;
-    padding: 40px 50px;
-    text-align: center;
+    padding: 24px 28px;
   }
 `;
 
@@ -52,19 +51,32 @@ const IconContainer = styled.div`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  ${props => props.position === 'left' ? 'right: -40px;' : 'left: -40px;'}
-  background: #6a0dad;
-  color: white;
+  ${props => props.position === 'left' ? 'right: -44px;' : 'left: -44px;'}
+  background: ${props => props.theme.body};
+  color: #6f42c1;
+  border: 2px solid #6f42c1;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 48px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 2;
+  font-size: 1.3em;
+  box-shadow: 0 0 0 4px ${props => props.theme.body}, 0 0 14px rgba(111, 66, 193, 0.45);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-50%) scale(1.15);
+    box-shadow: 0 0 0 4px ${props => props.theme.body}, 0 0 20px rgba(111, 66, 193, 0.65);
+  }
 
   @media (max-width: 768px) {
-    display: none;
+    width: 34px;
+    height: 34px;
+    left: -50px;
+    right: auto;
+    font-size: 0.9em;
   }
 `;
 
@@ -115,8 +127,8 @@ const TimelineItem = ({ position, featured, title, subtitle, date, description }
         <Date>{date}</Date>
         <Description>{description}</Description>
       </ItemContent>
-      <IconContainer position={position}>
-        <FaBriefcase />
+      <IconContainer position={position} theme={theme}>
+        <LuBriefcase />
       </IconContainer>
     </ItemContainer>
   );

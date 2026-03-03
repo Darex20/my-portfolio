@@ -1,5 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const fadeUp = keyframes`
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+`;
 import schoolLogo1 from '../assets/school_1.jpg';
 import schoolLogo2 from '../assets/school_2.jpg';
 import schoolLogo3 from '../assets/school_3.jpg';
@@ -9,10 +14,11 @@ const EducationSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 50px 50px 20px;  /* Adjusted padding */
+  padding: 50px 50px 20px;
   background-color: ${({ theme }) => theme.body};
   color: ${({ theme }) => theme.text};
   min-height: 100vh;
+  animation: ${fadeUp} 0.5s ease both;
 
   @media (max-width: 768px) {
     padding: 30px 30px 20px;  /* Adjusted padding */
