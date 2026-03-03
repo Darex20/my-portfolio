@@ -45,19 +45,19 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .header-title {
-    font-size: 2.5em; /* Make the header title larger */
+    font-size: 3em;
     color: inherit;
     text-decoration: none;
     position: relative;
 
     @media (max-width: 1350px) {
-      font-size: 1.5em; /* Make the header title smaller on mobile */
+      font-size: 1.8em;
     }
   }
 
   main {
     flex: 1;
-    padding-top: 80px; /* Add top padding to prevent content from being hidden behind the navbar */
+    padding-top: 100px;
   }
 
   .footer {
@@ -75,9 +75,9 @@ const GlobalStyle = createGlobalStyle`
 
   .nav-links a {
     color: ${({ theme }) => theme.text};
-    margin: 0 15px; /* Add some spacing between the nav links */
+    margin: 0 15px;
     text-decoration: none;
-    font-size: 1.5em; /* Increase the font size of the nav links */
+    font-size: 1.8em;
   }
 
   .nav-links a.active {
@@ -238,11 +238,11 @@ const App = () => {
               Dario <span style={{ color: '#6f42c1' }}>Pavlović</span>
             </NavLink>
             <nav className="nav-links">
-              <NavLink to="/about" activeClassName="active">About</NavLink>
-              <NavLink to="/projects" activeClassName="active">Projects and Papers</NavLink>
-              <NavLink to="/work-experience" activeClassName="active">Work Experience</NavLink>
-              <NavLink to="/skills" activeClassName="active">Skills</NavLink>
-              <NavLink to="/education" activeClassName="active">Education</NavLink>
+              <NavLink to="/about" className={({ isActive }) => isActive ? 'active' : ''}>About</NavLink>
+              <NavLink to="/projects" className={({ isActive }) => isActive ? 'active' : ''}>Projects and Papers</NavLink>
+              <NavLink to="/work-experience" className={({ isActive }) => isActive ? 'active' : ''}>Work Experience</NavLink>
+              <NavLink to="/skills" className={({ isActive }) => isActive ? 'active' : ''}>Skills</NavLink>
+              <NavLink to="/education" className={({ isActive }) => isActive ? 'active' : ''}>Education</NavLink>
             </nav>
             <ThemeToggle toggleTheme={toggleTheme} theme={theme} />
           </div>
@@ -251,11 +251,11 @@ const App = () => {
           <div className="close-btn" onClick={toggleSidebar}>
             &times;
           </div>
-          <NavLink to="/about" activeClassName="active" onClick={toggleSidebar}>About</NavLink>
-          <NavLink to="/projects" activeClassName="active" onClick={toggleSidebar}>Projects and Papers</NavLink>
-          <NavLink to="/work-experience" activeClassName="active" onClick={toggleSidebar}>Work Experience</NavLink>
-          <NavLink to="/skills" activeClassName="active" onClick={toggleSidebar}>Skills</NavLink>
-          <NavLink to="/education" activeClassName="active" onClick={toggleSidebar}>Education</NavLink>
+          <NavLink to="/about" className={({ isActive }) => isActive ? 'active' : ''} onClick={toggleSidebar}>About</NavLink>
+          <NavLink to="/projects" className={({ isActive }) => isActive ? 'active' : ''} onClick={toggleSidebar}>Projects and Papers</NavLink>
+          <NavLink to="/work-experience" className={({ isActive }) => isActive ? 'active' : ''} onClick={toggleSidebar}>Work Experience</NavLink>
+          <NavLink to="/skills" className={({ isActive }) => isActive ? 'active' : ''} onClick={toggleSidebar}>Skills</NavLink>
+          <NavLink to="/education" className={({ isActive }) => isActive ? 'active' : ''} onClick={toggleSidebar}>Education</NavLink>
         </div>
         <main>
           <Routes>

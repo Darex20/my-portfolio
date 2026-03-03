@@ -71,6 +71,7 @@ const Timeline = () => {
       {experienceData.map((item, index) => (
         <TimelineItem
           key={index}
+          featured={index === 0}
           position={item.position}
           title={item.title}
           subtitle={item.subtitle}

@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJsSquare, FaJava, FaPython, FaGitAlt, FaGithub, FaLinux, FaAws } from 'react-icons/fa';
-import { SiVercel, SiExpress, SiSpring, SiC, SiCplusplus, SiMongodb, SiMysql, SiPostgresql, SiHeroku, SiNetlify, SiUnity, SiWordpress, SiGoland, SiBlender, SiPytorch, SiTensorflow, SiKeras, SiScikitlearn, SiR, SiApachekafka, SiKubernetes, SiDocker, SiMicrosoftazure, SiGooglecloud, SiApachespark, SiFlask } from 'react-icons/si';
+import { SiVercel, SiExpress, SiSpring, SiC, SiCplusplus, SiMongodb, SiMysql, SiPostgresql, SiHeroku, SiNetlify, SiUnity, SiWordpress, SiGoland, SiBlender, SiPytorch, SiTensorflow, SiKeras, SiScikitlearn, SiR, SiApachekafka, SiKubernetes, SiDocker, SiGooglecloud, SiApachespark, SiFlask } from 'react-icons/si';
+import { VscAzure } from 'react-icons/vsc';
 import mixerGif from '../assets/mixer-800x600.gif';
 
 const SkillsSection = styled.section`
@@ -120,7 +121,7 @@ const skillsData = [
   { name: 'Kafka', icon: <SiApachekafka /> },
   { name: 'Kubernetes', icon: <SiKubernetes /> },
   { name: 'Docker', icon: <SiDocker /> },
-  { name: 'Azure', icon: <SiMicrosoftazure /> },
+  { name: 'Azure', icon: <VscAzure /> },
   { name: 'Spark', icon: <SiApachespark /> },
   { name: 'Flask', icon: <SiFlask /> },
   { name: 'Java', icon: <FaJava /> },
