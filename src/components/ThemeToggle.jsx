@@ -1,37 +1,63 @@
 import React from 'react';
-import './toggleSwitch.css';
+import styled from 'styled-components';
+import { FaSun, FaMoon } from 'react-icons/fa';
+
+const Pill = styled.button`
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 64px;
+  height: 32px;
+  border-radius: 999px;
+  border: 1.5px solid ${({ $dark }) => $dark ? 'rgba(111,66,193,0.6)' : 'rgba(111,66,193,0.35)'};
+  background: ${({ $dark }) => $dark
+    ? 'linear-gradient(135deg, #1a0a3c 0%, #2d1b69 100%)'
+    : 'linear-gradient(135deg, #e8f4fd 0%, #c8e6f9 100%)'};
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+  transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: ${({ $dark }) => $dark
+    ? '0 0 12px rgba(111,66,193,0.5), inset 0 1px 0 rgba(255,255,255,0.05)'
+    : '0 0 10px rgba(100,180,255,0.4), inset 0 1px 0 rgba(255,255,255,0.6)'};
+  flex-shrink: 0;
+
+  &:hover {
+    box-shadow: ${({ $dark }) => $dark
+      ? '0 0 20px rgba(111,66,193,0.75)'
+      : '0 0 18px rgba(100,180,255,0.65)'};
+    border-color: ${({ $dark }) => $dark ? 'rgba(111,66,193,0.9)' : 'rgba(111,66,193,0.6)'};
+  }
+`;
+
+const Knob = styled.div`
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.35s ease, box-shadow 0.35s ease;
+  transform: ${({ $dark }) => $dark ? 'translateX(34px)' : 'translateX(3px)'};
+  background: ${({ $dark }) => $dark
+    ? 'linear-gradient(135deg, #c084fc, #7c3aed)'
+    : 'linear-gradient(135deg, #fde68a, #fbbf24)'};
+  box-shadow: ${({ $dark }) => $dark
+    ? '0 2px 8px rgba(124,58,237,0.7)'
+    : '0 2px 8px rgba(251,191,36,0.6)'};
+  color: ${({ $dark }) => $dark ? '#fff' : '#92400e'};
+`;
 
 const ThemeToggle = ({ toggleTheme, theme }) => {
+  const dark = theme === 'dark';
   return (
-    <div className={`toggleBtn ${theme}`} onClick={toggleTheme}>
-      <div className="toggleSlider">
-        <div className="craterContainer">
-          <div className="crater top"></div>
-          <div className="crater bottom"></div>
-          <div className="crater right"></div>
-          <div className="crater left"></div>
-        </div>
-        <div className="cloud">
-          <svg
-            width="100%"
-            height="100%"
-            viewBox="0 0 64 64"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M20.25 51h-6.75v-9h-9c-2.206 0-4-1.794-4-4s1.794-4 4-4c0.666 0 1.3 0.167 1.85 0.46 1.028-7.926 7.924-14.46 15.65-14.46 5.514 0 10.444 3.11 13.09 7.76 0.93-0.367 1.95-0.56 3.06-0.56 5.514 0 10 4.486 10 10s-4.486 10-10 10h-13.25c-2.038 0-3.944 0.794-5.37 2.12s-2.12 3.332-2.12 5.38v0z"
-              fill="#ffffff"
-            />
-          </svg>
-        </div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-        <div className="star"></div>
-      </div>
-    </div>
+    <Pill $dark={dark} onClick={toggleTheme} aria-label="Toggle theme">
+      <Knob $dark={dark}>
+        {dark ? <FaMoon /> : <FaSun />}
+      </Knob>
+    </Pill>
   );
 };
 

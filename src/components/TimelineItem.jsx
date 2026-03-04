@@ -21,15 +21,19 @@ const ItemContainer = styled.div`
 `;
 
 const ItemContent = styled.div`
-  background: ${props => props.featured
-    ? (props.theme.body === '#1c1c1c' ? '#2e1f54' : '#ede8fb')
-    : (props.theme.body === '#1c1c1c' ? '#FFF' : '#000')};
-  color: ${props => props.featured
-    ? (props.theme.body === '#1c1c1c' ? '#e0d7f8' : '#2d1b6e')
-    : (props.theme.body === '#1c1c1c' ? '#000' : '#FFF')};
+  background: ${props => {
+    const dark = props.theme.body === '#1c1c1c';
+    if (props.featured) return dark ? '#ffffff' : '#111111';
+    return dark ? '#b0b0b0' : '#444444';
+  }};
+  color: ${props => {
+    const dark = props.theme.body === '#1c1c1c';
+    if (props.featured) return dark ? '#111111' : '#f5f5f5';
+    return dark ? '#1a1a1a' : '#e8e8e8';
+  }};
   padding: 30px 40px;
   border-radius: 10px;
-  box-shadow: ${props => props.featured ? '0 4px 24px rgba(111,66,193,0.3)' : 'none'};
+  box-shadow: ${props => props.featured ? '0 4px 24px rgba(0,0,0,0.25)' : '0 2px 8px rgba(0,0,0,0.12)'};
   position: relative;
   width: 100%;
   max-width: 500px;

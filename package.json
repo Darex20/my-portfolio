@@ -1,7 +1,7 @@
 {
   "name": "my-portfolio",
   "version": "0.1.0",
-  "homepage": "https://darex20.github.io/my-portfolio",
+  "homepage": "https://darex20.github.io",
   "dependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0",

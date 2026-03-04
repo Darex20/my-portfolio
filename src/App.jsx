@@ -84,6 +84,12 @@ const GlobalStyle = createGlobalStyle`
     border-bottom: 2px solid ${({ theme }) => theme.activeLink};
   }
 
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
   .nav-toggle {
     display: none;
     flex-direction: column;
@@ -162,7 +168,7 @@ const SidebarStyles = createGlobalStyle`
   .sidebar {
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     height: 100%;
     width: 260px;
     background-color: ${({ theme }) => theme.navBackground};
@@ -170,8 +176,8 @@ const SidebarStyles = createGlobalStyle`
     display: flex;
     flex-direction: column;
     padding-top: 80px;
-    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.2);
-    transform: translateX(-100%);
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.2);
+    transform: translateX(100%);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1002;
   }
@@ -188,18 +194,18 @@ const SidebarStyles = createGlobalStyle`
     font-weight: 600;
     letter-spacing: 0.02em;
     width: 100%;
-    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
     transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
   }
 
   .sidebar a:hover {
     background-color: ${({ theme }) => theme.activeLink}18;
-    border-left-color: ${({ theme }) => theme.activeLink}88;
+    border-right-color: ${({ theme }) => theme.activeLink}88;
     color: ${({ theme }) => theme.activeLink};
   }
 
   .sidebar a.active {
-    border-left-color: ${({ theme }) => theme.activeLink};
+    border-right-color: ${({ theme }) => theme.activeLink};
     color: ${({ theme }) => theme.activeLink};
     background-color: ${({ theme }) => theme.activeLink}12;
   }
@@ -269,11 +275,6 @@ const App = () => {
         <div className={`sidebar-overlay ${sidebarOpen ? 'open' : ''}`} onClick={toggleSidebar} />
         <header className="header">
           <div className="header-content">
-            <button className={`nav-toggle ${sidebarOpen ? 'open' : ''}`} onClick={toggleSidebar} aria-label="Toggle menu">
-              <span />
-              <span />
-              <span />
-            </button>
             <NavLink to="/about" className={({ isActive }) => isActive ? 'header-title active' : 'header-title'}>
               Dario <span style={{ color: '#6f42c1' }}>Pavlović</span>
             </NavLink>
@@ -284,7 +285,14 @@ const App = () => {
               <NavLink to="/skills" className={({ isActive }) => isActive ? 'active' : ''}>Skills</NavLink>
               <NavLink to="/education" className={({ isActive }) => isActive ? 'active' : ''}>Education</NavLink>
             </nav>
-            <ThemeToggle toggleTheme={toggleTheme} theme={theme} />
+            <div className="header-right">
+              <ThemeToggle toggleTheme={toggleTheme} theme={theme} />
+              <button className={`nav-toggle ${sidebarOpen ? 'open' : ''}`} onClick={toggleSidebar} aria-label="Toggle menu">
+                <span />
+                <span />
+                <span />
+              </button>
+            </div>
           </div>
         </header>
         <div className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
@@ -305,7 +313,7 @@ const App = () => {
           </Routes>
         </main>
         <footer className="footer">
-          <p>© 2024 Dario Pavlović. All rights reserved.</p>
+          <p>© 2026 Dario Pavlović. All rights reserved.</p>
         </footer>
       </Router>
     </ThemeProvider>

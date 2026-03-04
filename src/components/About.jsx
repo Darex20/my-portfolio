@@ -25,6 +25,7 @@ const AboutSection = styled.section`
   gap: 20px;
 `;
 
+
 const TiltWrapper = styled.div`
   width: 300px;
   height: 300px;
@@ -65,10 +66,24 @@ const TypingLine = styled.p`
   font-size: 1.8em;
   margin: 0;
   animation: ${fadeUp} 0.6s ease 0.2s both;
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+  flex-wrap: nowrap;
 
   .typing-text {
     color: #6f42c1;
     font-weight: bold;
+    white-space: nowrap;
+    min-width: 11em;
+    display: inline-block;
+    text-align: left;
+    background: ${({ theme }) => theme.body === '#1c1c1c' ? 'rgba(111,66,193,0.12)' : 'rgba(111,66,193,0.08)'};
+    border: 1.5px solid rgba(111,66,193,0.45);
+    border-radius: 6px;
+    padding: 2px 10px 2px 10px;
+    font-family: monospace;
+    box-shadow: 0 0 0 3px ${({ theme }) => theme.body === '#1c1c1c' ? 'rgba(111,66,193,0.08)' : 'rgba(111,66,193,0.05)'};
   }
 
   @media (max-width: 600px) {
@@ -199,7 +214,7 @@ const About = () => {
       <Greeting>Hi, I'm Dario 👋</Greeting>
 
       <TypingLine>
-        I'm into{' '}
+        I'm into
         <span className="typing-text">
           <ReactTypingEffect
             text={['Data Science', 'Machine Learning', 'Data Engineering', 'Data Visualization', 'Web Development']}
@@ -212,11 +227,6 @@ const About = () => {
       </TypingLine>
 
       <Divider />
-
-      <Bio>
-        I am a Data Scientist with MSc in Computing, currently working on TV advertisement analysis.
-          Experienced in machine learning, generative AI, and cloud data engineering.
-      </Bio>
 
       <ButtonGroup>
         <PrimaryButton href={cvPdf} target="_blank" rel="noreferrer">
@@ -231,6 +241,11 @@ const About = () => {
           </SecondaryButton>
         </SecondaryButtonRow>
       </ButtonGroup>
+
+      <Bio>
+        I am a Data Scientist with MSc in Computing, currently working on TV advertisement analysis.
+          Experienced in machine learning, generative AI, and cloud data engineering.
+      </Bio>
 
       <IconContainer>
         <IconLink href="https://github.com/Darex20" target="_blank" rel="noreferrer" aria-label="GitHub">
