@@ -86,18 +86,55 @@ const GlobalStyle = createGlobalStyle`
 
   .nav-toggle {
     display: none;
-    font-size: 2em;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 18px;
+    background: none;
+    border: none;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    padding: 0;
+    color: inherit;
+    z-index: 1001;
   }
 
-  .nav-toggle:hover {
-    transform: rotate(90deg);
+  .nav-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: ${({ theme }) => theme.navText};
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.2s ease;
+    transform-origin: center;
+  }
+
+  .nav-toggle.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .nav-toggle.open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  .nav-toggle.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  @media (max-width: 1700px) {
+    .header-title {
+      font-size: 2em;
+    }
+
+    .nav-links a {
+      font-size: 1.3em;
+      margin: 0 8px;
+    }
   }
 
   @media (max-width: 1350px) {
     .nav-toggle {
-      display: block;
+      display: flex;
     }
 
     .nav-links {
@@ -107,69 +144,64 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const SidebarStyles = createGlobalStyle`
+  .sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1001;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .sidebar-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
   .sidebar {
     position: fixed;
     top: 0;
     left: 0;
     height: 100%;
-    width: 250px;
+    width: 260px;
     background-color: ${({ theme }) => theme.navBackground};
     color: ${({ theme }) => theme.navText};
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding-top: 60px;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+    padding-top: 80px;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.2);
     transform: translateX(-100%);
-    transition: transform 0.3s ease-in-out;
-    z-index: 1000; /* Ensure the sidebar is on top of other elements */
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1002;
   }
 
   .sidebar.open {
     transform: translateX(0);
-    transition: transform 0.3s ease-in-out;
   }
 
   .sidebar a {
     color: ${({ theme }) => theme.text};
-    padding: 15px 30px;
+    padding: 14px 28px;
     text-decoration: none;
-    font-size: 1.5em;
+    font-size: 1.1em;
+    font-weight: 600;
+    letter-spacing: 0.02em;
     width: 100%;
-    text-align: center;
-    transition: background-color 0.3s, color 0.3s;
+    border-left: 3px solid transparent;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
   }
 
   .sidebar a:hover {
-    background-color: ${({ theme }) => theme.activeLink};
-    color: white;
+    background-color: ${({ theme }) => theme.activeLink}18;
+    border-left-color: ${({ theme }) => theme.activeLink}88;
+    color: ${({ theme }) => theme.activeLink};
   }
 
   .sidebar a.active {
-    border-bottom: 2px solid ${({ theme }) => theme.activeLink};
-  }
-
-  .close-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 2em;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-
-    &:hover {
-      transform: rotate(-90deg);
-    }
-  }
-
-  @media (max-width: 1350px) {
-    .sidebar a {
-      font-size: 1.2em;
-    }
-
-    .sidebar {
-      width: 200px;
-    }
+    border-left-color: ${({ theme }) => theme.activeLink};
+    color: ${({ theme }) => theme.activeLink};
+    background-color: ${({ theme }) => theme.activeLink}12;
   }
 `;
 
@@ -223,17 +255,25 @@ const App = () => {
     setSidebarOpen(!sidebarOpen);
   };
 
+  useEffect(() => {
+    document.body.style.overflow = sidebarOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [sidebarOpen]);
+
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <GlobalStyle />
       <SidebarStyles />
       <Router>
         <ScrollToTop />
+        <div className={`sidebar-overlay ${sidebarOpen ? 'open' : ''}`} onClick={toggleSidebar} />
         <header className="header">
           <div className="header-content">
-            <div className="nav-toggle" onClick={toggleSidebar}>
-              ☰
-            </div>
+            <button className={`nav-toggle ${sidebarOpen ? 'open' : ''}`} onClick={toggleSidebar} aria-label="Toggle menu">
+              <span />
+              <span />
+              <span />
+            </button>
             <NavLink to="/about" className={({ isActive }) => isActive ? 'header-title active' : 'header-title'}>
               Dario <span style={{ color: '#6f42c1' }}>Pavlović</span>
             </NavLink>
@@ -248,9 +288,6 @@ const App = () => {
           </div>
         </header>
         <div className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
-          <div className="close-btn" onClick={toggleSidebar}>
-            &times;
-          </div>
           <NavLink to="/about" className={({ isActive }) => isActive ? 'active' : ''} onClick={toggleSidebar}>About</NavLink>
           <NavLink to="/projects" className={({ isActive }) => isActive ? 'active' : ''} onClick={toggleSidebar}>Projects and Papers</NavLink>
           <NavLink to="/work-experience" className={({ isActive }) => isActive ? 'active' : ''} onClick={toggleSidebar}>Work Experience</NavLink>
