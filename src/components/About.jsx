@@ -82,7 +82,6 @@ const TypingLine = styled.p`
     border: 1.5px solid rgba(111,66,193,0.45);
     border-radius: 6px;
     padding: 2px 10px 2px 10px;
-    font-family: monospace;
     box-shadow: 0 0 0 3px ${({ theme }) => theme.body === '#1c1c1c' ? 'rgba(111,66,193,0.08)' : 'rgba(111,66,193,0.05)'};
   }
 
@@ -131,7 +130,6 @@ const PrimaryButton = styled.a`
   padding: 16px 40px;
   border-radius: 50px;
   font-size: 1.2em;
-  font-family: monospace;
   text-decoration: none;
   transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
   box-shadow: 0 4px 15px rgba(111, 66, 193, 0.35);
@@ -162,7 +160,6 @@ const SecondaryButton = styled(NavLink)`
   padding: 13px 28px;
   border-radius: 50px;
   font-size: 1.1em;
-  font-family: monospace;
   text-decoration: none;
   transition: border-color 0.2s, color 0.2s, transform 0.2s;
 

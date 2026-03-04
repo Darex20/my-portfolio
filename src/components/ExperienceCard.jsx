@@ -32,23 +32,19 @@ const CardBody = styled.div`
 
 const CardTitle = styled.h3`
   color: #333;
-  font-family: monospace;
 `;
 
 const CardSubtitle = styled.h4`
   color: #666;
-  font-family: monospace;
   margin-top: 0;
 `;
 
 const CardDate = styled.p`
   color: #999;
-  font-family: monospace;
 `;
 
 const CardDescription = styled.p`
   color: #666;
-  font-family: monospace;
 `;
 
 const ExperienceCard = ({ bgColor, icon, title, subtitle, date, description }) => (

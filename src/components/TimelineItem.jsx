@@ -37,7 +37,6 @@ const ItemContent = styled.div`
   position: relative;
   width: 100%;
   max-width: 500px;
-  font-family: monospace;
   transition: transform 0.3s ease-in-out;
 
   &:hover {
